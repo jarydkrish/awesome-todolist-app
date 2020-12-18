@@ -3,6 +3,7 @@ import { FlatList } from 'react-native';
 
 import { getTasks, setTaskStatus } from '../utilities/api';
 
+import TaskListHeader from './task_list/TaskListHeader';
 import Task from './task_list/Task';
 
 class TaskList extends Component {
@@ -63,6 +64,7 @@ class TaskList extends Component {
     const { refetching, tasks } = this.state;
     return (
       <FlatList
+        ListHeaderComponent={TaskListHeader}
         data={tasks}
         renderItem={(item) => (
           <Task
